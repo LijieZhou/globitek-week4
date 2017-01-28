@@ -12,7 +12,8 @@ $errors = array();
 $username = '';
 $password = '';
 
-if(is_post_request()) {
+if(is_post_request() && request_is_same_domain()) {
+  ensure_csrf_token_valid();
 
   // Confirm that values are present before accessing them.
   if(isset($_POST['username'])) { $username = $_POST['username']; }
@@ -66,8 +67,9 @@ if(is_post_request()) {
   <?php echo display_errors($errors); ?>
 
   <form action="login.php" method="post">
+    <?php echo csrf_token_tag(); ?>
     Username:<br />
-    <input type="text" name="username" value="<?php echo $username; ?>" /><br />
+    <input type="text" name="username" value="<?php echo h($username); ?>" /><br />
     Password:<br />
     <input type="password" name="password" value="" /><br />
     <input type="submit" name="submit" value="Submit"  />
