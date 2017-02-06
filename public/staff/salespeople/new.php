@@ -39,6 +39,7 @@ if(is_post_request()) {
   <?php echo display_errors($errors); ?>
 
   <form action="new.php" method="post">
+    <?php echo csrf_token_tag(); ?>
     First name:<br />
     <input type="text" name="first_name" value="<?php echo h($salesperson['first_name']); ?>" /><br />
     Last name:<br />

@@ -12,8 +12,11 @@ $errors = array();
 $username = '';
 $password = '';
 
-if(is_post_request() && request_is_same_domain()) {
-  ensure_csrf_token_valid();
+if(is_post_request()) {
+
+  if(!csrf_token_is_recent() || !request_is_same_domain()){
+    exit("CSRF Warning!");
+  }
 
   // Confirm that values are present before accessing them.
   if(isset($_POST['username'])) { $username = $_POST['username']; }

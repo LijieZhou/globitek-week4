@@ -35,6 +35,7 @@ if(is_post_request()) {
   <?php echo display_errors($errors); ?>
 
   <form action="new.php" method="post">
+    <?php echo csrf_token_tag(); ?>
     Name:<br />
     <input type="text" name="name" value="<?php echo h($country['name']); ?>" /><br />
     Code:<br />
