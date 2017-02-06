@@ -48,15 +48,15 @@ The following **required** functionality is completed:
 
 The following advanced user stories are optional:
 
-* [ ]  Bonus Objective 1: Identify security flaw in Objective #4 (requiring login on staff pages)
-  * [ ]  Identify the security principal not being followed.
-  * [ ]  Write a short description of how the code could be modified to be more secure.
+* [x]  Bonus Objective 1: Identify security flaw in Objective #4 (requiring login on staff pages)
+  * [x]  Identify the security principal not being followed.
+  * [x]  Write a short description of how the code could be modified to be more secure.
 
-* [ ] Bonus Objective 2: Add CSRF protections to all forms in the staff directory
+* [x] Bonus Objective 2: Add CSRF protections to all forms in the staff directory
 
-* [ ]  Bonus Objective 3: CSRF tokens only valid for 10 minutes.
+* [x]  Bonus Objective 3: CSRF tokens only valid for 10 minutes.
 
-* [ ]  Bonus Objective 4: Sessions are valid only if user-agent string matches previous value.
+* [x]  Bonus Objective 4: Sessions are valid only if user-agent string matches previous value.
 
 * [ ]  Advanced Objective: Set/Get Signed-Encrypted Cookie
   * [ ]  Create "public/set\_secret\_cookie.php".
@@ -69,17 +69,19 @@ The following advanced user stories are optional:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/bLPkPJc.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Bonus 1: The security principal prefers whitelisting to blacklisting. Under the current design, when a new page is added in the staff folder, develop has to add "require_login()" function manually (blacklist). A better approach would be set the default to "require_login()" (whitelist).
+
+Bonus 2:
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2017] [Lijie Zhou]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
